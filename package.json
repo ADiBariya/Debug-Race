@@ -9,5 +9,18 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
-  }
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hamzaul/Debug-Race.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hamzaul/Debug-Race/issues"
+  },
+  "homepage": "https://github.com/Hamzaul/Debug-Race#readme"
 }
