@@ -49,9 +49,15 @@ router.post("/register", authController.registerController );
 router.post("/login",authController.loginController);
 
 /**
- *- /api/auth/login
- *- Post login Router
+ *- /api/auth/profile
+ *- Post profile Router
  */
 router.get("/profile", authenticateUser,authController.getProfileController);
+
+/*
+* - /api/auth/logout
+* - get logout router
+*/
+router.get("/logout",authenticateUser,authController.logOutController);
 
 module.exports = router;

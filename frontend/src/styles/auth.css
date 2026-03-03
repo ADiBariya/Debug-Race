@@ -1,0 +1,121 @@
+/* Background same as your home */
+.auth-container {
+  min-height: 100vh;
+  background: #050505;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 165, 0, 0.03) 0px,
+    rgba(255, 165, 0, 0.03) 2px,
+    transparent 2px,
+    transparent 20px
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Header */
+.auth-header {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+}
+
+.auth-header h1 {
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+
+.auth-header p {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 5px;
+  letter-spacing: 2px;
+}
+
+/* Card */
+.auth-card {
+  width: 420px;
+  padding: 40px;
+  background: #0b0b0b;
+  border: 1px solid rgba(255, 165, 0, 0.4);
+  box-shadow: 0 0 20px rgba(255, 140, 0, 0.15);
+}
+
+/* Title */
+.auth-title {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  color: #ffa500;
+}
+
+/* Inputs */
+.input-group {
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  font-size: 12px;
+  margin-bottom: 8px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.input-group input {
+  background: #111;
+  border: 1px solid rgba(255, 165, 0, 0.3);
+  padding: 12px;
+  color: white;
+  font-family: inherit;
+  outline: none;
+  transition: 0.3s ease;
+}
+
+.input-group input:focus {
+  border-color: #ffa500;
+  box-shadow: 0 0 10px rgba(255, 165, 0, 0.4);
+}
+
+/* Button */
+.primary-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid #ffa500;
+  color: #ffa500;
+  letter-spacing: 3px;
+  font-family: inherit;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+  background: linear-gradient(90deg, #ffae00, #ff6a00);
+  color: black;
+  box-shadow: 0 0 15px rgba(255, 140, 0, 0.5);
+}
+
+/* Switch Link */
+.switch-link {
+  text-align: center;
+  margin-top: 25px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.switch-link a {
+  color: #ffa500;
+  text-decoration: none;
+}
+
+.switch-link a:hover {
+  text-decoration: underline;
+}
