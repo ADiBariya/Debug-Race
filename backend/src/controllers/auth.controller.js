@@ -64,6 +64,16 @@ async function loginController(req, res) {
     return res.status(500).json({ error: error.message });
   }
 }
+// @desc    Login user
+// @route   POST /api/auth/logout
+async function logOutController(req,res){
+  try {
+    res.cookie("token", "", { maxAge: 0, httpOnly: true }); 
+    res.status(200).json({ message: "Logged out successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Internal Server Error" });
+  }
+}
 
 // // @desc    Get user profile
 // // @route   GET /api/auth/profile
@@ -76,4 +86,4 @@ async function getProfileController(req, res) {
   }
 }
 
-module.exports = { registerController, loginController, getProfileController };
+module.exports = { registerController, loginController, getProfileController, logOutController };

@@ -1,0 +1,136 @@
+/* Background */
+.home-container {
+  min-height: 100vh;
+  background: #050505;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 165, 0, 0.03) 0px,
+    rgba(255, 165, 0, 0.03) 2px,
+    transparent 2px,
+    transparent 20px
+  );
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-family: 'Orbitron', sans-serif;
+}
+
+
+/* Top Bar */
+.top-bar {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 3px;
+  font-weight: bold;
+  color: #ff8c00;
+}
+
+.top-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid #444;
+  color: white;
+  padding: 10px 14px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.icon-btn:hover {
+  border-color: #ff8c00;
+}
+
+/* Center Hero */
+.hero-section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main Title */
+.main-title {
+  font-size: 90px;
+  font-weight: 800;
+  letter-spacing: 6px;
+  margin-bottom: 10px;
+  background: linear-gradient(to right, #fff, #bbb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Subtitle */
+.subtitle {
+  color: #ffd700;
+  letter-spacing: 5px;
+  margin-bottom: 60px;
+  font-size: 16px;
+}
+
+/* Buttons */
+.button-group {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 400px;
+}
+
+.primary-action,
+.secondary-action,
+.neutral-action {
+  padding: 20px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid;
+  transition: 0.3s;
+}
+
+/* Orange Button */
+.primary-action {
+  border-color: #ff6a00;
+  color: #ff6a00;
+}
+
+.primary-action:hover {
+  background: #ff6a00;
+  color: black;
+}
+
+/* Yellow Button */
+.secondary-action {
+  border-color: #ffd700;
+  color: #ffd700;
+}
+
+.secondary-action:hover {
+  background: #ffd700;
+  color: black;
+}
+
+/* Grey Buttons */
+.neutral-action {
+  border-color: #555;
+  color: #ccc;
+}
+
+.neutral-action:hover {
+  border-color: white;
+  color: white;
+}
