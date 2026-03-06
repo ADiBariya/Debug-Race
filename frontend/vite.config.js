@@ -12,11 +12,11 @@ export default defineConfig({
 
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        target: "https://debug-race-production.up.railway.app/api",
         changeOrigin: true
       },
       '/socket.io': {
-        target: 'http://localhost:5000',
+        target: "https://debug-race-production.up.railway.app/api",
         ws: true
       }
     }
