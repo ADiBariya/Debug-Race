@@ -3,7 +3,7 @@ const { Server } = require('socket.io');
 const initializeSocket = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: process.env.CLIENT_URL || 'http://localhost:5173',
+      origin: process.env.CLIENT_URL || "https://debug-race-production.up.railway.app/api",
       methods: ['GET', 'POST'],
       credentials: true
     }
