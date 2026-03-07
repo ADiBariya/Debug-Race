@@ -137,6 +137,7 @@ async function getPlayers(req, res) {
       status: lobby.status,
       settings: lobby.settings,
       levelInfo: lobby.settings.level,
+      currentRace: lobby.currentRace,
     });
   } catch (error) {
     res.status(500).json({ error: error.message });
