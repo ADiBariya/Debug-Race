@@ -4,6 +4,7 @@ import Register from "../pages/RegisterPage";
 import Lobby from "../pages/LobbyPage";
 import Profile from "../pages/profilePage";
 import RoomPage from "../pages/Roompage";
+import RacePage from "../components/Race/RacePage";
 import { useAuth } from "../features/auth/features.authContext";
 import ProtectedRoute from "./ProtectedRoute";
 import Loader from "../pages/LoaderPage";
@@ -51,6 +52,18 @@ const AppRoutes = () => {
           </ProtectedRoute>
         }
       />
+
+      <Route
+        path="/race/:raceId"
+        element={
+          <ProtectedRoute>
+            <RacePage />
+          </ProtectedRoute>
+        }
+      />
+
+      {/* Catch all - redirect to loader */}
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 };
