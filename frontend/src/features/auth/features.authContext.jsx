@@ -34,17 +34,24 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const register = async (data) => {
-    await registerUser(data);
+    const res = await registerUser(data);
+    if (res.data?.token) {
+      localStorage.setItem("debugrace_token", res.data.token);
+    }
     await fetchUser();
   };
 
   const login = async (data) => {
-    await loginUser(data);
+    const res = await loginUser(data);
+    if (res.data?.token) {
+      localStorage.setItem("debugrace_token", res.data.token);
+    }
     await fetchUser();
   };
 
   const logout = async () => {
     await logoutUser();
+    localStorage.removeItem("debugrace_token");
     setUser(null);
   };
 
