@@ -4,6 +4,8 @@ import { useGame } from '../../context/GameContext';
 import { useSocket } from '../../context/SocketContext';
 import { getRace, submitAnswer, generateQuestion } from '../../services/api';
 import Phaser from 'phaser';
+import { BootScene } from '../../game/scenes/BootScene';
+import { PreloaderScene } from '../../game/scenes/PreloaderScene';
 import { RaceScene } from '../../game/scenes/RaceScene';
 import QuestionPanel from './QuestionPanel';
 import SpeedBar from './SpeedBar';
@@ -59,7 +61,7 @@ export default function RacePage() {
           debug: false
         }
       },
-      scene: [RaceScene]
+      scene: [BootScene, PreloaderScene, RaceScene]
     };
 
     const game = new Phaser.Game(config);
