@@ -235,11 +235,51 @@ async function startRaceController(req, res) {
     });
   }
 }
+async function updateSettingsController(req, res) {
+  try {
+    const { code } = req.params;
+    const { language, level } = req.body;
+
+    const lobby = await lobbyModel.findOne({ code });
+    if (!lobby) {
+      return res.status(404).json({ message: "Lobby not found" });
+    }
+
+    // Only leader can update settings
+    if (lobby.leader.toString() !== req.user._id.toString()) {
+      return res.status(403).json({ message: "Only the leader can update settings" });
+    }
+
+    // Validate & apply language
+    const validLanguages = ["C", "Python", "Java", "JavaScript"];
+    if (language && validLanguages.includes(language)) {
+      lobby.settings.language = language;
+    }
+
+    // Validate & apply level
+    const parsedLevel = parseInt(level, 10);
+    if (!isNaN(parsedLevel) && parsedLevel >= 1 && parsedLevel <= 5) {
+      lobby.settings.level = parsedLevel;
+    }
+
+    await lobby.save();
+
+    res.status(200).json({
+      message: "Settings updated successfully",
+      settings: lobby.settings,
+    });
+  } catch (error) {
+    console.error("updateSettingsController error:", error);
+    res.status(500).json({ message: "Something went wrong" });
+  }
+}
+
 module.exports = {
   createLobbyController,
   joinLobbyController,
   exitLobbyController,
   getPlayers,
   toggleReadyController,
-  startRaceController
+  startRaceController,
+  updateSettingsController,
 };
